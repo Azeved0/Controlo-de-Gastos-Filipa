@@ -1,0 +1,6 @@
+pandas
+streamlit
+google-auth
+gspread
+streamlit_echarts
+streamlit_autorefresh
