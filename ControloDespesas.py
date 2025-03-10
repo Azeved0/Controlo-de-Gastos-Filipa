@@ -37,7 +37,7 @@ st.set_page_config(
 st_autorefresh(interval=300 * 10000, key="keep_alive")
 
 # Gui start
-st.title("Monitorização de Gastos 😁")
+st.title("Gastos da Pipa ☺️")
 
 with st.expander("Adicionar despesa"):
     # Add a new entry
