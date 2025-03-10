@@ -9,7 +9,7 @@ from streamlit_autorefresh import st_autorefresh
 
 # Google Sheets Setup
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SPREADSHEET_ID = "1ZssUo6wfy4wZO9eQPljOTdwzF7dTSpxZ1_wNa6yGqaw"  # Replace with your Google Sheets ID
+SPREADSHEET_ID = "1cY3OdMfZtOHjCXArhjWLUvKO8ORz6LrUEGP1rYQi1P0/edit?gid=0#gid=0"  # Replace with your Google Sheets ID
 
 # Load credentials from Streamlit secrets
 credentials = Credentials.from_service_account_info(st.secrets["GOOGLE_CREDENTIALS"], scopes=SCOPES)
