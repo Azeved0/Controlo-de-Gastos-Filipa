@@ -76,8 +76,35 @@ df['Value'] = df['Value'].astype(float)
 
 # Creating a container to insert pretended month and respective piechart
 with st.container():
+    # Get the current month
+    current_month = datetime.now().strftime("%B")
+    
+    # Define the list of months in Portuguese
+    months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+    
+    # Map the English month name to Portuguese
+    month_map = {
+        "January": "Janeiro",
+        "February": "Fevereiro",
+        "March": "Março",
+        "April": "Abril",
+        "May": "Maio",
+        "June": "Junho",
+        "July": "Julho",
+        "August": "Agosto",
+        "September": "Setembro",
+        "October": "Outubro",
+        "November": "Novembro",
+        "December": "Dezembro"
+    }
+    
+    # Get the current month in Portuguese
+    default_month = month_map[current_month]
+    
+    # Create a selectbox with the default selected month as the current month
+    month = st.selectbox("Month:", months, index=months.index(default_month))
+    
     # Filter DataFrame for rows where 'insert_date' is in selected month
-    month = st.selectbox("Month:",("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"))
     month_mapping = {"Janeiro": 1,"Fevereiro": 2,"Março": 3,"Abril": 4,"Maio": 5,"Junho": 6,"Julho": 7,"Agosto": 8,"Setembro": 9,"Outubro": 10,"Novembro": 11,"Dezembro": 12}
     month_number = month_mapping[month]
     month_df = df[df['Insert_date'].dt.month == month_number]
